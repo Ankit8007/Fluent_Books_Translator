@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../CustomWidgets/Button.dart';
-import '../../CustomWidgets/DropDown.dart';
 import '../../CustomWidgets/ImageView.dart';
 import '../../CustomWidgets/TextView.dart';
 import '../../childWidgets/BottomBanner.dart';
@@ -12,21 +11,20 @@ import '../../component/fonts.dart';
 import '../../component/img.dart';
 import '../../component/size.dart';
 import 'QualificationDoc.dart';
-import 'SetupInterview.dart';
 
-class SelectTransLangs extends StatefulWidget {
-  const SelectTransLangs({Key? key}) : super(key: key);
-  static const String routeName = 'SelectTransLangs';
+class SetupInterview extends StatefulWidget {
+  const SetupInterview({Key? key}) : super(key: key);
+  static const String routeName = 'SetupInterview';
 
   @override
-  State<SelectTransLangs> createState() => _SelectTransLangsState();
+  State<SetupInterview> createState() => _SetupInterviewState();
 }
 
-class _SelectTransLangsState extends State<SelectTransLangs> {
+class _SetupInterviewState extends State<SetupInterview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: blueCyan,
+      backgroundColor: purpleMimosa,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -47,25 +45,17 @@ class _SelectTransLangsState extends State<SelectTransLangs> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             TextView(
-                              translatingFrom,
+                              setupInterview,
                               style: txt_20_white_600_CM,
                               marginTop: s40,
                             ),
                             TextView(
-                              "(${selectLangs.toLowerCase()})",
-                              style: txt_20_white_600_CM,
+                              setupIntervDesc,
+                              style: txt_14_white,
                             ),
                           ],
                         )),
-                    ListView.separated(
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) => DropDown(
-                              hint: 'Language',
-                              boxDeco: editTextDecoration(),
-                              marginTop: s15,
-                            ),
-                        separatorBuilder: (context, index) => const SizedBox(),
-                        itemCount: 5),
+
                     Button(
                       label: next,
                       labelStyle: txt_20_white,
@@ -73,7 +63,7 @@ class _SelectTransLangsState extends State<SelectTransLangs> {
                       marginVertical: s40,
                       ontap: () {
                         Navigator.pushNamed(
-                            context, SetupInterview.routeName);
+                            context, QualificationDoc.routeName);
                       },
                     ),
                   ],
@@ -93,7 +83,3 @@ class _SelectTransLangsState extends State<SelectTransLangs> {
     return boxDecoration(color: white, radius: s10);
   }
 }
-
-
-
-

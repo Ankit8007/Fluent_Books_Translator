@@ -10,6 +10,7 @@ import 'src/register/QualificationDoc.dart';
 import 'src/register/SelectChildLikes.dart';
 import 'src/register/SelectLanguages.dart';
 import 'src/register/SelectTranLangs.dart';
+import 'src/register/SetupInterview.dart';
 import 'src/register/TranslatorBlurb.dart';
 import 'src/register/ContactDetails.dart';
 import 'src/register/CreateAccount.dart';
@@ -30,6 +31,7 @@ final Map<String, WidgetBuilder> routes = {
   YourLanguage.routeName:(context)=> const YourLanguage(),
   QualificationDoc.routeName:(context) => const QualificationDoc(),
   SelectTransLangs.routeName:(context) => const SelectTransLangs(),
+  SetupInterview.routeName:(context) => const SetupInterview(),
   AddChild.routeName:(context)=> const AddChild(),
   SelectChildLikes.routeName:(context)=> const SelectChildLikes(),
   SelectLanguages.routeName:(context)=> const SelectLanguages(),

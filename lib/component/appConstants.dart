@@ -47,3 +47,5 @@ const String qualificationDocDesc = 'Upload any documents related to their langu
 const String uploadDocHere = 'Upload documents here';
 const String translatingFrom = 'Translating from';
 const String selectLangs = 'Select languages';
+const String setupInterview = 'Set up interview';
+const String setupIntervDesc = 'Lorem ipsum dolor sit amet, consetetue sadipscing elitr, sed diam nonumy eirmed tempor invidunt ut';
