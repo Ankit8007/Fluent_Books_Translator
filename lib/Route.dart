@@ -1,4 +1,6 @@
 
+import 'package:fluent_books_translator/src/register/UnderReview.dart';
+import 'package:fluent_books_translator/src/register/VerifyOTP.dart';
 import 'package:flutter/material.dart';
 
 import 'src/Login.dart';
@@ -32,6 +34,8 @@ final Map<String, WidgetBuilder> routes = {
   QualificationDoc.routeName:(context) => const QualificationDoc(),
   SelectTransLangs.routeName:(context) => const SelectTransLangs(),
   SetupInterview.routeName:(context) => const SetupInterview(),
+  VerifyOTP.routeName:(context) => const VerifyOTP(),
+  UnderReview.routeName:(context) => const UnderReview(),
   AddChild.routeName:(context)=> const AddChild(),
   SelectChildLikes.routeName:(context)=> const SelectChildLikes(),
   SelectLanguages.routeName:(context)=> const SelectLanguages(),

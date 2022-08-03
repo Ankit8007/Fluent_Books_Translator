@@ -39,7 +39,7 @@ class _SelectTransLangsState extends State<SelectTransLangs> {
                         alignment: Alignment.centerLeft,
                         child: ImageView(
                           Img.logoImg,
-                          size: s15 * 10,
+                          size: s15 * 8,
                         )),
                     Align(
                         alignment: Alignment.centerLeft,
@@ -48,12 +48,13 @@ class _SelectTransLangsState extends State<SelectTransLangs> {
                           children: [
                             TextView(
                               translatingFrom,
-                              style: txt_20_white_600_CM,
-                              marginTop: s40,
+                              style: txt_18_white_600_CM,
+                              marginTop: s40 * 2,
                             ),
                             TextView(
                               "(${selectLangs.toLowerCase()})",
-                              style: txt_20_white_600_CM,
+                              style: txt_18_white_600_CM,
+                              marginBottom: s20,
                             ),
                           ],
                         )),
@@ -68,8 +69,8 @@ class _SelectTransLangsState extends State<SelectTransLangs> {
                         itemCount: 5),
                     Button(
                       label: next,
-                      labelStyle: txt_20_white,
-                      boxDeco: boxDecoration(color: blue, radius: s10),
+                      labelStyle: txt_16_white,
+                      boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                       marginVertical: s40,
                       ontap: () {
                         Navigator.pushNamed(
@@ -90,7 +91,7 @@ class _SelectTransLangsState extends State<SelectTransLangs> {
   }
 
   editTextDecoration() {
-    return boxDecoration(color: white, radius: s10);
+    return boxDecoration(color: white, radius: s10, giveShadow: true);
   }
 }
 

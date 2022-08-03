@@ -39,14 +39,15 @@ class _LoginState extends State<Login> {
                       alignment: Alignment.centerLeft,
                       child: ImageView(
                         Img.logoImg,
-                        size: s15 * 10,
+                        size: s15 * 8,
                       )),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: TextView(
                         log_in,
-                        style: txt_20_white_600_CM,
+                        style: txt_18_white_600_CM,
                         marginTop: s40,
+                        marginBottom: s20,
                       )),
                   EditText(
                     hint: email,
@@ -62,12 +63,12 @@ class _LoginState extends State<Login> {
                       child: TextView(
                         forgotYourPassword_q,
                         marginVertical: s40,
-                        style: txt_15_white_600_undr,
+                        style: txt_13_white_600_undr,
                       )),
                   Button(
                     label: log_in,
-                    labelStyle: txt_20_white,
-                    boxDeco: boxDecoration(color: blue, radius: s10),
+                    labelStyle: txt_16_white,
+                    boxDeco: boxDecoration(color: blue, radius: s10,giveShadow: true),
                     ontap: () {},
                   ),
                   Row(
@@ -78,11 +79,11 @@ class _LoginState extends State<Login> {
                         dontHaveAnAccount_q,
                         marginRight: s3,
                         marginTop: s40,
-                        style: txt_15_white,
+                        style: txt_13_white,
                       ),
                       TextView(
                         sign_up,
-                        style: txt_15_blue_600_undr,
+                        style: txt_13_blue_600_undr,
                         onTap: () {
                           Navigator.pushNamed(context, CreateAccount.routeName);
                         },
@@ -102,6 +103,6 @@ class _LoginState extends State<Login> {
   }
 
   editTextDecoration() {
-    return boxDecoration(color: white, radius: s10);
+    return boxDecoration(color: white, radius: s10,giveShadow: true);
   }
 }

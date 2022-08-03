@@ -35,11 +35,12 @@ class _CreateAccountState extends State<CreateAccount> {
                 children: [
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: ImageView(Img.logoImg,size: s15 * 10,)),
+                      child: ImageView(Img.logoImg,size: s15 * 8,)),
 
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: TextView(createYourAccount,style: txt_20_white_600_CM,marginTop: s40,)),
+                      child: TextView(createYourAccount,style: txt_18_white_600_CM,marginTop: s40 * 2,
+                      marginBottom: s20,)),
 
                   EditText(
                     hint: firstName,
@@ -50,11 +51,12 @@ class _CreateAccountState extends State<CreateAccount> {
                   EditText(
                     hint: lastName,
                     boxDeco: editTextDecoration() ,
+                    marginBottom: s20,
                   ),
 
                   Button(
                       label: next,
-                      labelStyle: txt_20_white,
+                      labelStyle: txt_16_white,
                       boxDeco: boxDecoration(color: blue, radius: s10),
                     marginVertical: s40,
                     ontap: (){
@@ -66,8 +68,8 @@ class _CreateAccountState extends State<CreateAccount> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      TextView(dontHaveAnAccount_q,marginRight: s3, marginTop: s40,style: txt_15_white,),
-                      TextView(sign_up,style: txt_15_blue_600_undr,)
+                      TextView(dontHaveAnAccount_q,marginRight: s3, marginTop: s20,style: txt_13_white,),
+                      TextView(sign_up,style: txt_13_blue_600_undr,)
                     ],
                   )
                 ],

@@ -36,11 +36,11 @@ class _CreatePasswordState extends State<CreatePassword> {
                 children: [
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: ImageView(Img.logoImg,size: s15 * 10,)),
+                      child: ImageView(Img.logoImg,size: s15 * 8,)),
 
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: TextView(addPassword,style: txt_20_white_600_CM,marginTop: s40,)),
+                      child: TextView(addPassword,style: txt_18_white_600_CM,marginTop: s40 * 2,marginBottom: s20,)),
 
                   EditText(
                     hint: password,
@@ -51,12 +51,13 @@ class _CreatePasswordState extends State<CreatePassword> {
                   EditText(
                     hint: confirmPassword,
                     boxDeco: editTextDecoration() ,
+                    marginBottom: s20,
                   ),
 
                   Button(
                     label: next,
-                    labelStyle: txt_20_white,
-                    boxDeco: boxDecoration(color: blue, radius: s10),
+                    labelStyle: txt_16_white,
+                    boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                     marginVertical: s40,
                     ontap: (){
                       Navigator.pushNamed(context, TranslatorBlurb.routeName);
@@ -82,6 +83,6 @@ class _CreatePasswordState extends State<CreatePassword> {
     );
   }
   editTextDecoration(){
-    return boxDecoration(color: white, radius: s10);
+    return boxDecoration(color: white, radius: s10, giveShadow: true);
   }
 }

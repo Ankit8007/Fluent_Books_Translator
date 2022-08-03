@@ -1,3 +1,4 @@
+import 'package:fluent_books_translator/component/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -28,7 +29,7 @@ class EditText extends StatelessWidget {
       this.marginTop,
       this.marginLeft,
       this.marginRight,
-      this.marginBottom, this.hintStyle, this.inputType})
+      this.marginBottom, this.hintStyle, this.inputType, this.padding, this.paddingVertical, this.paddingHorizontal, this.paddingTop, this.paddingLeft, this.paddingRight, this.paddingBottom})
       : super(key: key);
   final int? maxLines;
   final TextStyle? style;
@@ -55,6 +56,13 @@ class EditText extends StatelessWidget {
   final double? marginLeft;
   final double? marginRight;
   final double? marginBottom;
+  final double? padding;
+  final double? paddingVertical;
+  final double? paddingHorizontal;
+  final double? paddingTop;
+  final double? paddingLeft;
+  final double? paddingRight;
+  final double? paddingBottom;
   final TextInputType? inputType;
 
   @override
@@ -67,6 +75,7 @@ class EditText extends StatelessWidget {
         right: margin ?? marginHorizontal ?? marginRight ?? 0,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             child: label != null
@@ -79,8 +88,14 @@ class EditText extends StatelessWidget {
           ),
           Container(
             decoration: boxDeco,
+            padding: EdgeInsets.only(
+              top: padding ?? paddingVertical ?? paddingTop ?? 0,
+              bottom: padding ?? paddingVertical ?? paddingBottom ?? 0,
+              left: padding ?? paddingHorizontal ?? paddingLeft ?? s20,
+              right: padding ?? paddingHorizontal ?? paddingRight ?? s20,
+            ),
             child: TextField(
-              // style: ,
+               style: txt_14_black,
               // onTap: ,
               // maxLines: ,
               // readOnly: ,
@@ -91,8 +106,9 @@ class EditText extends StatelessWidget {
               // onChanged: ,
               // enabled: ,
               decoration: InputDecoration(
+                isDense: true,
                   hintText: hint ?? '',
-                hintStyle: hintStyle,
+                hintStyle: hintStyle ?? txt_14_hint,
                 border: InputBorder.none,
               ),
               keyboardType: inputType,

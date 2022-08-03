@@ -38,14 +38,15 @@ class _UploadIconState extends State<UploadIcon> {
                       alignment: Alignment.centerLeft,
                       child: ImageView(
                         Img.logoImg,
-                        size: s15 * 10,
+                        size: s15 * 8,
                       )),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: TextView(
                         uploadPhotoIcon,
-                        style: txt_20_white_600_CM,
-                        marginTop: s40,
+                        style: txt_18_white_600_CM,
+                        marginTop: s40 * 2,
+                        marginBottom: s20,
                       )),
                   Row(
                     children: [
@@ -64,7 +65,7 @@ class _UploadIconState extends State<UploadIcon> {
                         flex: 1,
                         child: Button(
                             label: upload,
-                            labelStyle: txt_14_white,
+                            labelStyle: txt_13_white,
                             boxDeco: boxDecoration(color: blue, radius: s8)),
                       )
                     ],
@@ -90,8 +91,8 @@ class _UploadIconState extends State<UploadIcon> {
                   ),
                   Button(
                     label: next,
-                    labelStyle: txt_20_white,
-                    boxDeco: boxDecoration(color: blue, radius: s10),
+                    labelStyle: txt_16_white,
+                    boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                     marginVertical: s40,
                     ontap: () {
                       Navigator.pushNamed(context, ContactDetails.routeName);

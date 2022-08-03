@@ -35,11 +35,11 @@ class _AddAddressState extends State<AddAddress> {
                   children: [
                     Align(
                         alignment: Alignment.centerLeft,
-                        child: ImageView(Img.logoImg,size: s15 * 10,)),
+                        child: ImageView(Img.logoImg,size: s15 * 8,)),
 
                     Align(
                         alignment: Alignment.centerLeft,
-                        child: TextView(address,style: txt_20_white_600_CM,marginTop: s40,)),
+                        child: TextView(address,style: txt_18_white_600_CM,marginTop: s40 * 2,marginBottom: s20,)),
 
                     EditText(
                       hint: address,
@@ -71,8 +71,8 @@ class _AddAddressState extends State<AddAddress> {
 
                     Button(
                       label: next,
-                      labelStyle: txt_20_white,
-                      boxDeco: boxDecoration(color: blue, radius: s10),
+                      labelStyle: txt_16_white,
+                      boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                       marginVertical: s40,
                       ontap: (){
                         Navigator.pushNamed(context, PaymentInfo.routeName);
@@ -91,6 +91,6 @@ class _AddAddressState extends State<AddAddress> {
     );
   }
   editTextDecoration(){
-    return boxDecoration(color: white, radius: s10);
+    return boxDecoration(color: white, radius: s10,giveShadow: true);
   }
 }

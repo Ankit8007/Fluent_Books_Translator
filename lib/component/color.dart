@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 const Color black = Colors.black;
 const Color white = Colors.white;
 const Color grey = Colors.grey;
+const Color greyHint = Color(0xC1C2C2C2);
 
 const Color pink_magentaRed = Color(0xFFDD86B9);
 const Color pinkRose= Color(0xFFF497AA);

@@ -37,11 +37,11 @@ class _PaymentInfoState extends State<PaymentInfo> {
                   children: [
                     Align(
                         alignment: Alignment.centerLeft,
-                        child: ImageView(Img.logoImg,size: s15 * 10,)),
+                        child: ImageView(Img.logoImg,size: s15 * 8,)),
 
                     Align(
                         alignment: Alignment.centerLeft,
-                        child: TextView(paymentInfo,style: txt_20_white_600_CM,marginTop: s40,)),
+                        child: TextView(paymentInfo,style: txt_18_white_600_CM,marginTop: s40 * 2, )),
 
                     DropDown(hint: selectYourBank,
                       boxDeco: editTextDecoration(),
@@ -62,8 +62,8 @@ class _PaymentInfoState extends State<PaymentInfo> {
 
                     Button(
                       label: next,
-                      labelStyle: txt_20_white,
-                      boxDeco: boxDecoration(color: blue, radius: s10),
+                      labelStyle: txt_16_white,
+                      boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                       marginVertical: s40,
                       ontap: (){
                         Navigator.pushNamed(context, YourLanguage.routeName);
@@ -83,6 +83,6 @@ class _PaymentInfoState extends State<PaymentInfo> {
     );
   }
   editTextDecoration(){
-    return boxDecoration(color: white, radius: s10);
+    return boxDecoration(color: white, radius: s10,giveShadow: true);
   }
 }

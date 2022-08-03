@@ -20,7 +20,7 @@ class ImageBtn extends StatelessWidget {
       this.paddingRight,
       this.paddingTop,
       this.paddingBottom,
-      this.childImg, this.size, this.width, this.height})
+      this.childImg, this.size, this.width, this.height, this.onTap})
       : super(key: key);
   final BoxDecoration? boxDeco;
   final double? margin;
@@ -41,26 +41,30 @@ class ImageBtn extends StatelessWidget {
   final double? size;
   final double? width;
   final double? height;
+  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: size ?? width,
-     height: size ?? height,
-      decoration: boxDeco,
-      margin: EdgeInsets.only(
-        top: margin ?? marginVertical ?? marginTop ?? 0,
-        bottom: margin ?? marginVertical ?? marginBottom ?? 0,
-        left: margin ?? marginHorizontal ?? marginLeft ?? 0,
-        right: margin ?? marginHorizontal ?? marginRight ?? 0,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: size ?? width,
+       height: size ?? height,
+        decoration: boxDeco,
+        margin: EdgeInsets.only(
+          top: margin ?? marginVertical ?? marginTop ?? 0,
+          bottom: margin ?? marginVertical ?? marginBottom ?? 0,
+          left: margin ?? marginHorizontal ?? marginLeft ?? 0,
+          right: margin ?? marginHorizontal ?? marginRight ?? 0,
+        ),
+        padding: EdgeInsets.only(
+          top: padding ?? paddingVertical ?? paddingTop ?? s10,
+          bottom: padding ?? paddingVertical ?? paddingBottom ?? s10,
+          left: padding ?? paddingHorizontal ?? paddingLeft ?? s10,
+          right: padding ?? paddingHorizontal ?? paddingRight ?? s10,
+        ),
+        child: childImg,
       ),
-      padding: EdgeInsets.only(
-        top: padding ?? paddingVertical ?? paddingTop ?? s10,
-        bottom: padding ?? paddingVertical ?? paddingBottom ?? s10,
-        left: padding ?? paddingHorizontal ?? paddingLeft ?? s10,
-        right: padding ?? paddingHorizontal ?? paddingRight ?? s10,
-      ),
-      child: childImg,
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:fluent_books_translator/src/register/VerifyOTP.dart';
 import 'package:flutter/material.dart';
 
 import '../../CustomWidgets/Button.dart';
@@ -37,7 +38,7 @@ class _SetupInterviewState extends State<SetupInterview> {
                         alignment: Alignment.centerLeft,
                         child: ImageView(
                           Img.logoImg,
-                          size: s15 * 10,
+                          size: s15 * 8,
                         )),
                     Align(
                         alignment: Alignment.centerLeft,
@@ -46,24 +47,25 @@ class _SetupInterviewState extends State<SetupInterview> {
                           children: [
                             TextView(
                               setupInterview,
-                              style: txt_20_white_600_CM,
-                              marginTop: s40,
+                              style: txt_18_white_600_CM,
+                              marginTop: s40 * 2,
                             ),
                             TextView(
                               setupIntervDesc,
-                              style: txt_14_white,
+                              style: txt_13_white,
+                              marginVertical: s20,
                             ),
                           ],
                         )),
 
                     Button(
                       label: next,
-                      labelStyle: txt_20_white,
-                      boxDeco: boxDecoration(color: blue, radius: s10),
+                      labelStyle: txt_16_white,
+                      boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                       marginVertical: s40,
                       ontap: () {
                         Navigator.pushNamed(
-                            context, QualificationDoc.routeName);
+                            context, VerifyOTP.routeName);
                       },
                     ),
                   ],

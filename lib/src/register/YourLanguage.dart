@@ -39,11 +39,11 @@ class _YourLanguageState extends State<YourLanguage> {
                   children: [
                     Align(
                         alignment: Alignment.centerLeft,
-                        child: ImageView(Img.logoImg,size: s15 * 10,)),
+                        child: ImageView(Img.logoImg,size: s15 * 8,)),
 
                     Align(
                         alignment: Alignment.centerLeft,
-                        child: TextView(yourMotherTongue,style: txt_20_white_600_CM,marginTop: s40,)),
+                        child: TextView(yourMotherTongue,style: txt_18_white_600_CM,marginTop: s40 *2,)),
 
                     DropDown(hint: 'Language',
                       boxDeco: editTextDecoration(),
@@ -56,11 +56,11 @@ class _YourLanguageState extends State<YourLanguage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          TextView(yourOtherLangs,style: txt_20_white_600_CM,),
+                          TextView(yourOtherLangs,style: txt_18_white_600_CM,),
                           ImageBtn(
-                            childImg: Icon(Icons.add,color: white,size: s20 * 2,),
+                            childImg: Icon(Icons.add,color: white,size: s15 * 2,),
                             padding: s5,
-                            boxDeco: boxDecoration(color: blue, radius: s10) ,
+                            boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true) ,
                           )
                         ],
                       ),
@@ -76,8 +76,8 @@ class _YourLanguageState extends State<YourLanguage> {
 
                     Button(
                       label: next,
-                      labelStyle: txt_20_white,
-                      boxDeco: boxDecoration(color: blue, radius: s10),
+                      labelStyle: txt_16_white,
+                      boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                       marginVertical: s40,
                       ontap: (){
                         Navigator.pushNamed(context, QualificationDoc.routeName);
@@ -96,6 +96,6 @@ class _YourLanguageState extends State<YourLanguage> {
     );
   }
   editTextDecoration(){
-    return boxDecoration(color: white, radius: s10);
+    return boxDecoration(color: white, radius: s10, giveShadow: true);
   }
 }

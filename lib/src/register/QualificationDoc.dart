@@ -39,7 +39,7 @@ class _QualificationDocState extends State<QualificationDoc> {
                       alignment: Alignment.centerLeft,
                       child: ImageView(
                         Img.logoImg,
-                        size: s15 * 10,
+                        size: s15 * 8,
                       )),
 
 
@@ -47,15 +47,15 @@ class _QualificationDocState extends State<QualificationDoc> {
                       alignment: Alignment.centerLeft,
                       child: TextView(
                         yourQualificationDoc,
-                        style: txt_20_white_600_CM,
-                        marginTop: s40,
+                        style: txt_18_white_600_CM,
+                        marginTop: s40 * 2,
                       )),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: TextView(
                         qualificationDocDesc,
                         style: txt_14_white,
-                        marginTop: s40,
+                        marginTop: s20,
                       )),
                   Row(
                     children: [
@@ -74,7 +74,7 @@ class _QualificationDocState extends State<QualificationDoc> {
                         flex: 1,
                         child: Button(
                             label: upload,
-                            labelStyle: txt_14_white,
+                            labelStyle: txt_13_white,
                             boxDeco: boxDecoration(color: blue, radius: s8)),
                       )
                     ],
@@ -100,8 +100,8 @@ class _QualificationDocState extends State<QualificationDoc> {
                   ),
                   Button(
                     label: next,
-                    labelStyle: txt_20_white,
-                    boxDeco: boxDecoration(color: blue, radius: s10),
+                    labelStyle: txt_16_white,
+                    boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                     marginVertical: s40,
                     ontap: () {
                       Navigator.pushNamed(context, SelectTransLangs.routeName);

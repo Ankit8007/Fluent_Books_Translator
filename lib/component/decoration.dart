@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-BoxDecoration boxDecoration({Color? color, Color? borderColor, double radius = 0,}) {
+BoxDecoration boxDecoration({
+  Color? color,
+  Color? borderColor,
+  double radius = 0,
+  bool giveShadow = false,
+}) {
   return BoxDecoration(
-    color: color,
-    border: Border.all(width: 1, color: borderColor ?? Colors.transparent),
-    borderRadius: BorderRadius.circular(radius),
-    //boxShadow:,
-    //gradient:,
-    //shape:,
-  );
+      color: color,
+      border: Border.all(width: 1, color: borderColor ?? Colors.transparent),
+      borderRadius: BorderRadius.circular(radius),
+      boxShadow: giveShadow ? shadow : []
+      //gradient:,
+      //shape:,
+      );
 }
+
+
+final shadow = [BoxShadow(
+  color: Colors.black.withOpacity(0.2),
+  spreadRadius: 3,
+  blurRadius: 7,
+  offset: Offset(0, 8), // changes position of shadow
+)] ;
