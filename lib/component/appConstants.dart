@@ -1,3 +1,7 @@
+import 'package:fluent_books_translator/component/img.dart';
+
+import '../Models/SideMenuModel.dart';
+
 const String email = 'Email';
 const String password = 'Password';
 const String forgotYourPassword_q = 'Forgot your Password?';
@@ -58,3 +62,26 @@ const String resendCode = 'Resend Code';
 const String verify = 'Verify';
 const String underReview = 'Under review';
 const String underReviewDesc = 'Your account is under verification Please waiting for admin approval';
+const String bookShelf = 'Book shelf';
+const String myTranslations = 'My translations';
+const String payments = 'Payments';
+const String emailNewsLetter = 'Email Newsletter';
+const String myProfile = 'My Profile';
+const String notifications = 'Notifications';
+const String settings = 'Settings';
+const String aboutUs = 'About Us';
+const String contactUs = 'Contact Us';
+const String logout = 'Logout';
+const String search = 'Search';
+
+final List<SideMenuModel> sideMenuList = [
+  SideMenuModel(image: Img.homeIcon,title: bookShelf),
+  SideMenuModel(image: Img.translationIcon,title: myTranslations ),
+  SideMenuModel(image: Img.paymentIcon,title: payments),
+  SideMenuModel(image: Img.newsLetterIcon,title: emailNewsLetter),
+  SideMenuModel(image: Img.profileIcon,title: myProfile),
+  SideMenuModel(image: Img.notificationIcon,title: notifications),
+  SideMenuModel(image: Img.settingIcon,title: settings),
+  SideMenuModel(image: Img.aboutUsIcon,title: aboutUs),
+  SideMenuModel(image: Img.contactUsIcon,title: contactUs),
+];

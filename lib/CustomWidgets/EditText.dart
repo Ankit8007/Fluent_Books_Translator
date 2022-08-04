@@ -29,7 +29,20 @@ class EditText extends StatelessWidget {
       this.marginTop,
       this.marginLeft,
       this.marginRight,
-      this.marginBottom, this.hintStyle, this.inputType, this.padding, this.paddingVertical, this.paddingHorizontal, this.paddingTop, this.paddingLeft, this.paddingRight, this.paddingBottom})
+      this.marginBottom,
+      this.hintStyle,
+      this.inputType,
+      this.padding,
+      this.paddingVertical,
+      this.paddingHorizontal,
+      this.paddingTop,
+      this.paddingLeft,
+      this.paddingRight,
+      this.paddingBottom,
+      this.preChild,
+      this.postChild,
+      this.preSize,
+      this.postSize})
       : super(key: key);
   final int? maxLines;
   final TextStyle? style;
@@ -64,6 +77,10 @@ class EditText extends StatelessWidget {
   final double? paddingRight;
   final double? paddingBottom;
   final TextInputType? inputType;
+  final Widget? preChild;
+  final Widget? postChild;
+  final double? preSize;
+  final double? postSize;
 
   @override
   Widget build(BuildContext context) {
@@ -94,26 +111,38 @@ class EditText extends StatelessWidget {
               left: padding ?? paddingHorizontal ?? paddingLeft ?? s20,
               right: padding ?? paddingHorizontal ?? paddingRight ?? s20,
             ),
-            child: TextField(
-               style: txt_14_black,
-              // onTap: ,
-              // maxLines: ,
-              // readOnly: ,
-              // textAlign: ,
-              // minLines: ,
-              // maxLength: ,
-              // keyboardType: ,
-              // onChanged: ,
-              // enabled: ,
-              decoration: InputDecoration(
-                isDense: true,
-                  hintText: hint ?? '',
-                hintStyle: hintStyle ?? txt_14_hint,
-                border: InputBorder.none,
-              ),
-              keyboardType: inputType,
-              obscureText: secureText ?? false,
-              controller: controller,
+            child: Row(
+              children: [
+                SizedBox(
+                  child: preChild,
+                ),
+                Expanded(
+                  child: TextField(
+                    style: txt_14_black,
+                    // onTap: ,
+                    // maxLines: ,
+                    // readOnly: ,
+                    // textAlign: ,
+                    // minLines: ,
+                    // maxLength: ,
+                    // keyboardType: ,
+                    // onChanged: ,
+                    // enabled: ,
+                    decoration: InputDecoration(
+                      isDense: true,
+                      hintText: hint ?? '',
+                      hintStyle: hintStyle ?? txt_14_hint,
+                      border: InputBorder.none,
+                    ),
+                    keyboardType: inputType,
+                    obscureText: secureText ?? false,
+                    controller: controller,
+                  ),
+                ),
+                SizedBox(
+                  child: postChild,
+                ),
+              ],
             ),
           ),
         ],

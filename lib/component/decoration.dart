@@ -5,12 +5,17 @@ BoxDecoration boxDecoration({
   Color? color,
   Color? borderColor,
   double radius = 0,
+  double? radiusTop,
   bool giveShadow = false,
 }) {
   return BoxDecoration(
       color: color,
       border: Border.all(width: 1, color: borderColor ?? Colors.transparent),
-      borderRadius: BorderRadius.circular(radius),
+      borderRadius: radiusTop != null ? BorderRadius.only(
+        topRight: Radius.circular(radiusTop),
+        topLeft: Radius.circular(radiusTop)
+      ) :
+      BorderRadius.circular(radius),
       boxShadow: giveShadow ? shadow : []
       //gradient:,
       //shape:,
