@@ -73,6 +73,13 @@ const String aboutUs = 'About Us';
 const String contactUs = 'Contact Us';
 const String logout = 'Logout';
 const String search = 'Search';
+const String account = 'Account';
+const String changePassword = 'Change Password';
+const String languages = 'Languages';
+const String accountDetails = 'Account Details';
+const String privacyPolicy = 'Privacy Policy';
+const String termsCond = 'Terms & Conditions';
+const String dummy = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
 final List<SideMenuModel> sideMenuList = [
   SideMenuModel(image: Img.homeIcon,title: bookShelf),
@@ -84,4 +91,15 @@ final List<SideMenuModel> sideMenuList = [
   SideMenuModel(image: Img.settingIcon,title: settings),
   SideMenuModel(image: Img.aboutUsIcon,title: aboutUs),
   SideMenuModel(image: Img.contactUsIcon,title: contactUs),
+];
+
+final List<SideMenuModel> settingsList = [
+  SideMenuModel(image: Img.accountIcon,title: account),
+  SideMenuModel(image: Img.notificationBlueOutIcon,title: notifications),
+  SideMenuModel(image: Img.passwordLockBlueIcon,title: changePassword),
+  SideMenuModel(image: Img.worldBlueIcon,title: languages),
+  SideMenuModel(image: Img.worldBlueIcon,title: languages),
+  SideMenuModel(image: Img.bankBlueIcon,title: accountDetails),
+  SideMenuModel(image: Img.shieldBlueIcon,title: privacyPolicy),
+  SideMenuModel(image: Img.fileBlueIcon,title: termsCond),
 ];

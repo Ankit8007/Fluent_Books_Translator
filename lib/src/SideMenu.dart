@@ -3,7 +3,9 @@ import 'package:fluent_books_translator/component/appConstants.dart';
 import 'package:fluent_books_translator/component/color.dart';
 import 'package:fluent_books_translator/component/img.dart';
 import 'package:fluent_books_translator/component/size.dart';
+import 'package:fluent_books_translator/controller/FragmentCtrl.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SideMenu extends StatefulWidget {
   const SideMenu({Key? key}) : super(key: key);
@@ -13,6 +15,7 @@ class SideMenu extends StatefulWidget {
 }
 
 class _SideMenuState extends State<SideMenu> {
+  final FragmentCtrl ctrlX = Get.put(FragmentCtrl());
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,10 @@ class _SideMenuState extends State<SideMenu> {
                     itemBuilder: (context, index) => SideMenuCard(
                         icon: sideMenuList[index].image,
                         title: sideMenuList[index].title,
-                      onTap: (){},
+                      onTap: (){
+                          Navigator.pop(context);
+                          ctrlX.onMenuAction(index);
+                      },
                     ),
                     separatorBuilder: (context, index) => SizedBox(
                           height: s20 * 2,

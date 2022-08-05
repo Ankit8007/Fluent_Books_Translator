@@ -70,7 +70,7 @@ class _BookShelfState extends State<BookShelf> {
           ],
         ),
       ),
-      drawer: SideMenu(),
+      drawer: const SideMenu(),
     );
   }
 }

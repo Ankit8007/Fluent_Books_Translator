@@ -18,4 +18,12 @@ class Img{
   static const String menuIcon = '${iconAdr}menu.png';
   static const String notificationOutlineIcon = '${iconAdr}notificationOutline.png';
   static const String searchIcon = '${iconAdr}search.png';
+  static const String accountIcon = '${iconAdr}account.png';
+  static const String notificationBlueOutIcon = '${iconAdr}notificationBlue.png';
+  static const String passwordLockBlueIcon = '${iconAdr}passwordLock.png';
+  static const String worldBlueIcon = '${iconAdr}world.png';
+  static const String bankBlueIcon = '${iconAdr}bank.png';
+  static const String shieldBlueIcon = '${iconAdr}shield.png';
+  static const String fileBlueIcon = '${iconAdr}file.png';
+  static const String amountReceiveIcon = '${iconAdr}amountReceive.png';
 }

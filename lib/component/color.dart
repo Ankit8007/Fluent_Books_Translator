@@ -16,6 +16,7 @@ const Color red = Color(0xFFE53446);
 
 const Color crystalBlue = Color(0xFF4FC1E8);
 const Color greenishCyan = Color(0xFF82CCB5);
+const Color green = Color(0xFF1DB404);
 const Color greenPaleOlive = Color(0xFFA0D568);
 const Color greenPaleOlive_light = Color(0xFFB6D884);
 
