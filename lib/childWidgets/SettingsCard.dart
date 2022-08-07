@@ -6,12 +6,11 @@ import '../component/fonts.dart';
 import '../component/size.dart';
 
 class SettingsCard extends StatelessWidget {
-  const SettingsCard({Key? key, required this.icon, required this.title, this.onTap, this.postIcon, this.postTap}) : super(key: key);
+  const SettingsCard({Key? key, required this.icon, required this.title, this.onTap, this.postChild}) : super(key: key);
   final String icon;
   final String title;
   final GestureTapCallback? onTap;
-  final String? postIcon;
-  final String? postTap;
+  final Widget? postChild;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -31,11 +30,10 @@ class SettingsCard extends StatelessWidget {
               marginLeft: s15,
             ),
             Spacer(),
-            ImageView(
-              icon,
-              size: s15 * 2,
-              fit: BoxFit.contain,
-            ),
+
+            SizedBox(
+              child: postChild,
+            )
           ],
         ),
       ),

@@ -6,11 +6,12 @@ BoxDecoration boxDecoration({
   Color? borderColor,
   double radius = 0,
   double? radiusTop,
+  bool dottedBorder = false,
   bool giveShadow = false,
 }) {
   return BoxDecoration(
       color: color,
-      border: Border.all(width: 1, color: borderColor ?? Colors.transparent),
+      border: Border.all(width: 1, color: borderColor ?? Colors.transparent,),
       borderRadius: radiusTop != null ? BorderRadius.only(
         topRight: Radius.circular(radiusTop),
         topLeft: Radius.circular(radiusTop)

@@ -99,7 +99,7 @@ class EditText extends StatelessWidget {
                 ? TextView(
                     label ?? '',
                     style: labelStyle,
-                    marginBottom: s10,
+                    marginBottom: s5,
                   )
                 : null,
           ),
@@ -121,7 +121,7 @@ class EditText extends StatelessWidget {
                     style: txt_14_black,
                     // onTap: ,
                     // maxLines: ,
-                    // readOnly: ,
+                    readOnly: readOnly ?? false,
                     // textAlign: ,
                     // minLines: ,
                     // maxLength: ,

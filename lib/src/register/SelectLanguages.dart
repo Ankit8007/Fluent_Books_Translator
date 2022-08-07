@@ -25,50 +25,52 @@ class _SelectLanguagesState extends State<SelectLanguages> {
     return Scaffold(
       backgroundColor: greenishCyan,
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(s15),
-              child: Column(
-                children: [
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: ImageView(Img.logoImg,size: s15 * 10,)),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(s15),
+                child: Column(
+                  children: [
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: ImageView(Img.logoImg,size: s15 * 10,)),
 
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: TextView(yourChildLikes,style: txt_20_white_600_CM,marginTop: s40,)),
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: TextView(yourChildLikes,style: txt_20_white_600_CM,marginTop: s40,)),
 
 
-                  Row(
-                    children: [
-                      Expanded(child: TextView(selectLangDesc,style: txt_10_white,)),
-                      Button(
-                        label: details,
-                        labelStyle: txt_10_white,
-                        width: s15 * 5,
-                        boxDeco: boxDecoration(color: blue, radius: s5),
-                        padding: s5,
-                      )
-                    ],
-                  ),
+                    Row(
+                      children: [
+                        Expanded(child: TextView(selectLangDesc,style: txt_10_white,)),
+                        Button(
+                          label: details,
+                          labelStyle: txt_10_white,
+                          width: s15 * 5,
+                          boxDeco: boxDecoration(color: blue, radius: s5),
+                          padding: s5,
+                        )
+                      ],
+                    ),
 
-                  Button(
-                    label: next,
-                    labelStyle: txt_20_white,
-                    boxDeco: boxDecoration(color: blue, radius: s10),
-                    marginVertical: s40,
-                    ontap: (){
-                      // Navigator.pushNamed(context, AddChild.routeName);
-                    },
-                  ),
-                ],
+                    Button(
+                      label: next,
+                      labelStyle: txt_20_white,
+                      boxDeco: boxDecoration(color: blue, radius: s10),
+                      marginVertical: s40,
+                      ontap: (){
+                        // Navigator.pushNamed(context, AddChild.routeName);
+                      },
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const Spacer(),
+              const Spacer(),
 
-            const BottomBanner(),
-          ],
+              const BottomBanner(),
+            ],
+          ),
         ),
       ),
     );

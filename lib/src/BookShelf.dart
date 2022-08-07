@@ -1,5 +1,7 @@
+import 'package:fluent_books_translator/src/BookDetails.dart';
 import 'package:fluent_books_translator/src/SideMenu.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../CustomWidgets/EditText.dart';
 import '../CustomWidgets/ImageView.dart';
@@ -9,6 +11,7 @@ import '../component/color.dart';
 import '../component/decoration.dart';
 import '../component/img.dart';
 import '../component/size.dart';
+import '../controller/FragmentCtrl.dart';
 
 class BookShelf extends StatefulWidget {
   const BookShelf({Key? key}) : super(key: key);
@@ -19,6 +22,7 @@ class BookShelf extends StatefulWidget {
 
 class _BookShelfState extends State<BookShelf> {
   final GlobalKey<ScaffoldState> _key = GlobalKey();
+  final FragmentCtrl scr = Get.put(FragmentCtrl());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +38,10 @@ class _BookShelfState extends State<BookShelf> {
               preTap: (){
                 _key.currentState!.openDrawer();
               },
+              postTap: (){
+                scr.onMenuAction(5);
+              },
+
             ),
             EditText(
               hint: search,
@@ -44,7 +52,7 @@ class _BookShelfState extends State<BookShelf> {
               inputType: TextInputType.text,
               preChild: ImageView(
                 Img.searchIcon,
-                size: 15,
+                size: s15,
                 marginRight: s10,
               ),
             ),
@@ -63,6 +71,9 @@ class _BookShelfState extends State<BookShelf> {
                   Img.bookImg,
                   fit: BoxFit.cover,
                   radius: s15,
+                  onTap: (){
+                    Navigator.pushNamed(context,BookDetails.routeName);
+                  },
                   boxDeco: boxDecoration(borderColor: blue, radius: s15),
                 ),
               ),

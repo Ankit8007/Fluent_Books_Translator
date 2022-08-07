@@ -43,7 +43,7 @@ class DropDown extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           TextView(hint,style: hintStyle,),
-          Icon(Icons.arrow_drop_down, size: s20,),
+          Icon(Icons.arrow_drop_down, size: s15 * 2,),
         ],
       ),
     );

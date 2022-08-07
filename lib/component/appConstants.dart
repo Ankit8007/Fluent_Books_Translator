@@ -80,6 +80,11 @@ const String accountDetails = 'Account Details';
 const String privacyPolicy = 'Privacy Policy';
 const String termsCond = 'Terms & Conditions';
 const String dummy = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+const String translation = 'Translation';
+
+
+
+
 
 final List<SideMenuModel> sideMenuList = [
   SideMenuModel(image: Img.homeIcon,title: bookShelf),
@@ -95,11 +100,35 @@ final List<SideMenuModel> sideMenuList = [
 
 final List<SideMenuModel> settingsList = [
   SideMenuModel(image: Img.accountIcon,title: account),
-  SideMenuModel(image: Img.notificationBlueOutIcon,title: notifications),
+  SideMenuModel(image: Img.notificationBlueOutIcon,title: notifications, postImage: 'notification'),
   SideMenuModel(image: Img.passwordLockBlueIcon,title: changePassword),
-  SideMenuModel(image: Img.worldBlueIcon,title: languages),
   SideMenuModel(image: Img.worldBlueIcon,title: languages),
   SideMenuModel(image: Img.bankBlueIcon,title: accountDetails),
   SideMenuModel(image: Img.shieldBlueIcon,title: privacyPolicy),
   SideMenuModel(image: Img.fileBlueIcon,title: termsCond),
+];
+
+
+const String french = 'French';
+const String spanish = 'Spanish';
+const String chinese = 'Chinese';
+const String hindi = 'Hindi';
+const String japanese = 'Japanese';
+const String english = 'English';
+
+final List<SideMenuModel> langList = [
+  SideMenuModel(image: Img.ani1,title: french),
+  SideMenuModel(image: Img.ani2,title: spanish),
+  SideMenuModel(image: Img.ani3,title: chinese),
+  SideMenuModel(image: Img.ani4,title: hindi),
+  SideMenuModel(image: Img.ani4,title: japanese),
+  SideMenuModel(image: Img.ani5,title: english),
+];
+
+
+final List<String> socialIconList = [
+  Img.facebook,
+  Img.twitter,
+  Img.instagram,
+  Img.google
 ];

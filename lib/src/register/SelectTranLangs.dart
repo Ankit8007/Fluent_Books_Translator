@@ -60,6 +60,7 @@ class _SelectTransLangsState extends State<SelectTransLangs> {
                         )),
                     ListView.separated(
                         shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
                         itemBuilder: (context, index) => DropDown(
                               hint: 'Language',
                               boxDeco: editTextDecoration(),

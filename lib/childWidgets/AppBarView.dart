@@ -6,16 +6,19 @@ import '../CustomWidgets/TextView.dart';
 import '../component/size.dart';
 
 class AppBarView extends StatelessWidget {
-  const AppBarView({Key? key, this.preIcon, this.title, this.postIcon, this.preTap})
+  const AppBarView({Key? key, this.preIcon, this.title, this.postIcon, this.preTap, this.backgroundColor, this.postTap})
       : super(key: key);
   final String? preIcon;
   final String? title;
   final String? postIcon;
   final GestureTapCallback? preTap;
+  final GestureTapCallback? postTap;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: backgroundColor,
       padding: EdgeInsets.all(s15),
       child: Row(
         children: [
@@ -28,7 +31,8 @@ class AppBarView extends StatelessWidget {
             style: txt_16_white,
             marginHorizontal: s20,
           )),
-          imageCard(icon: postIcon),
+          GestureDetector(
+              onTap: postTap,child: imageCard(icon: postIcon)),
         ],
       ),
     );

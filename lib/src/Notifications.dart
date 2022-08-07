@@ -11,6 +11,7 @@ import 'SideMenu.dart';
 
 class Notifications extends StatefulWidget {
   const Notifications({Key? key}) : super(key: key);
+  static const  String routeName = 'Notifications';
 
   @override
   State<Notifications> createState() => _NotificationsState();
@@ -29,7 +30,6 @@ class _NotificationsState extends State<Notifications> {
             AppBarView(
               preIcon: Img.menuIcon,
               title: notifications,
-              postIcon: Img.notificationOutlineIcon,
               preTap: (){
                 _key.currentState!.openDrawer();
               },

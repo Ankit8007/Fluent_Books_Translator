@@ -59,6 +59,7 @@ class _UploadIconState extends State<UploadIcon> {
                               boxDecoration(radius: s10, borderColor: white),
                           marginVertical: s20,
                           marginRight: s10,
+                          readOnly: true,
                         ),
                       ),
                       Expanded(
