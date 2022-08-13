@@ -1,3 +1,5 @@
+import 'package:fluent_books_translator/childWidgets/DateRangeCalendar.dart';
+import 'package:fluent_books_translator/childWidgets/TimerSheet.dart';
 import 'package:fluent_books_translator/src/register/VerifyOTP.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +50,7 @@ class _SetupInterviewState extends State<SetupInterview> {
                             TextView(
                               setupInterview,
                               style: txt_18_white_600_CM,
-                              marginTop: s40 * 2,
+                              marginTop: s40,
                             ),
                             TextView(
                               setupIntervDesc,
@@ -57,6 +59,28 @@ class _SetupInterviewState extends State<SetupInterview> {
                             ),
                           ],
                         )),
+
+                    Align(
+                      alignment: Alignment.centerLeft,
+                        child: TextView('Select Date',style: txt_14_white_600,
+                          marginBottom: s20,
+                        )),
+
+                    Container(
+                      padding: EdgeInsets.all(s15),
+                        decoration: boxDecoration(
+                          color: white,
+                          radius: s10,
+                        ),
+                        child: DateRangeCalendar()),
+
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: TextView('Select time',style: txt_14_white_600,
+                          marginBottom: s5,
+                          marginTop: s20,
+                        )),
+                    TimerSheet(),
 
                     Button(
                       label: next,

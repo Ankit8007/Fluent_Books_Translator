@@ -36,11 +36,11 @@ class _EditProfileState extends State<EditProfile> {
           child: Column(
             children: [
               AppBarView(
-                preIcon: Img.menuIcon,
+                preIcon: Img.backIOSWhiteIcon,
                 title: myProfile,
                 backgroundColor: blue,
                 preTap: () {
-                  _key.currentState!.openDrawer();
+                  Navigator.pop(context);
                 },
               ),
               Expanded(
@@ -150,7 +150,6 @@ class _EditProfileState extends State<EditProfile> {
           ),
         ),
       ),
-      drawer: const SideMenu(),
     );
   }
 }

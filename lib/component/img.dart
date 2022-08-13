@@ -34,6 +34,7 @@ class Img{
   static const String editIcon = '${iconAdr}edit.png';
   static const String addCirBlueIcon = '${iconAdr}addCirOut.png';
   static const String rotateIcon = '${iconAdr}rotate.png';
+  static const String waitingIcon = '${iconAdr}waiting.png';
   static const String ani1 = '${imgAdr}ani1.png';
   static const String ani2 = '${imgAdr}ani2.png';
   static const String ani3 = '${imgAdr}ani3.png';

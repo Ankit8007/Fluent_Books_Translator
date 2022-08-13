@@ -1,3 +1,4 @@
+import 'package:fluent_books_translator/CustomWidgets/ImageView.dart';
 import 'package:fluent_books_translator/CustomWidgets/TextView.dart';
 import 'package:fluent_books_translator/childWidgets/BottomBanner.dart';
 import 'package:fluent_books_translator/component/appConstants.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../../CustomWidgets/ImageBtn.dart';
 import '../../component/color.dart';
+import '../../component/img.dart';
 import '../../component/size.dart';
 
 class UnderReview extends StatefulWidget {
@@ -40,7 +42,7 @@ class _UnderReviewState extends State<UnderReview> {
             Expanded(child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.timelapse, color: blue, size: 150,),
+                ImageView(Img.waitingIcon,size: s15 * 10,),
                 TextView(underReviewDesc,
                   style: txt_18_white_600_CM,
                   textAlign: TextAlign.center,

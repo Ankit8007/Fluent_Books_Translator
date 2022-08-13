@@ -68,7 +68,18 @@ class _LanguagesState extends State<Languages> {
                     color: blue,
                   radius: s10,
                 ),
-              )
+              ),
+              Button(label: 'Cancel',
+                labelStyle: txt_16_black,
+                marginHorizontal: s15,
+                marginBottom: s15,
+                boxDeco: boxDecoration(
+                  color: white,
+                  radius: s10,
+                  borderColor: black
+                ),
+              ),
+
             ],
           ),
         ),

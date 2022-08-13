@@ -1,8 +1,12 @@
+import 'package:fluent_books_translator/childWidgets/TabButton.dart';
+import 'package:fluent_books_translator/component/fonts.dart';
 import 'package:fluent_books_translator/src/BookDetails.dart';
+import 'package:fluent_books_translator/src/CreateBook.dart';
 import 'package:fluent_books_translator/src/SideMenu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../CustomWidgets/Button.dart';
 import '../CustomWidgets/EditText.dart';
 import '../CustomWidgets/ImageView.dart';
 import '../childWidgets/AppBarView.dart';
@@ -77,7 +81,8 @@ class _BookShelfState extends State<BookShelf> {
                   boxDeco: boxDecoration(borderColor: blue, radius: s15),
                 ),
               ),
-            ))
+            )),
+
           ],
         ),
       ),

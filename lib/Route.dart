@@ -1,9 +1,12 @@
 import 'package:fluent_books_translator/EditProfil.dart';
+import 'package:fluent_books_translator/src/CreateBook.dart';
+import 'package:get/get.dart';
 
 import 'src/PaymentDetails.dart';
 
 import 'src/Languages.dart';
 import 'src/PrivacyPolicy.dart';
+import 'src/RequestExtendTime.dart';
 import 'src/TermsCondition.dart';
 import 'src/TranslationSingle.dart';
 import 'package:flutter/material.dart';
@@ -60,4 +63,6 @@ final Map<String, WidgetBuilder> routes = {
   TranslationSingle.routeName:(context)=> const TranslationSingle(),
   PaymentDetails.routeName:(context)=> const PaymentDetails(),
   EditProfile.routeName:(context)=> const EditProfile(),
+  CreateBook.routeName:(context)=> const CreateBook(),
+  RequestExtendTime.routeName:(context)=> const RequestExtendTime(),
 };
