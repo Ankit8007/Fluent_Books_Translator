@@ -1,3 +1,4 @@
+import 'package:fluent_books_translator/src/register/AddAddress.dart';
 import 'package:flutter/material.dart';
 
 import '../../CustomWidgets/Button.dart';
@@ -96,7 +97,7 @@ class _UploadIconState extends State<UploadIcon> {
                     boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                     marginVertical: s40,
                     ontap: () {
-                      Navigator.pushNamed(context, ContactDetails.routeName);
+                      Navigator.pushNamed(context, AddAddress.routeName);
                     },
                   ),
                 ],

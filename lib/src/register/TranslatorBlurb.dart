@@ -1,3 +1,4 @@
+import 'package:fluent_books_translator/src/register/UploadIcon.dart';
 import 'package:flutter/material.dart';
 
 import '../../CustomWidgets/Button.dart';
@@ -57,7 +58,7 @@ class _TranslatorBlurbState extends State<TranslatorBlurb> {
                     boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                     marginVertical: s40,
                     ontap: (){
-                      Navigator.pushNamed(context, AddAddress.routeName);
+                      Navigator.pushNamed(context, UploadIcon.routeName);
                     },
                   ),
                   // Row(

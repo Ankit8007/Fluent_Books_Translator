@@ -1,5 +1,6 @@
 import 'package:fluent_books_translator/childWidgets/DateRangeCalendar.dart';
 import 'package:fluent_books_translator/childWidgets/TimerSheet.dart';
+import 'package:fluent_books_translator/src/register/UnderReview.dart';
 import 'package:fluent_books_translator/src/register/VerifyOTP.dart';
 import 'package:flutter/material.dart';
 
@@ -89,7 +90,7 @@ class _SetupInterviewState extends State<SetupInterview> {
                       marginVertical: s40,
                       ontap: () {
                         Navigator.pushNamed(
-                            context, VerifyOTP.routeName);
+                            context, UnderReview.routeName);
                       },
                     ),
                   ],

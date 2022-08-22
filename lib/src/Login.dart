@@ -14,6 +14,7 @@ import '../component/decoration.dart';
 import '../component/fonts.dart';
 import '../component/img.dart';
 import '../component/size.dart';
+import 'register/ContactDetails.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -87,7 +88,7 @@ class _LoginState extends State<Login> {
                         sign_up,
                         style: txt_13_blue_600_undr,
                         onTap: () {
-                          Navigator.pushNamed(context, CreateAccount.routeName);
+                          Navigator.pushNamed(context, ContactDetails.routeName);
                         },
                       )
                     ],

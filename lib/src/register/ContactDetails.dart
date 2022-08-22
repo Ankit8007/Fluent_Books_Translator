@@ -1,4 +1,5 @@
 
+import 'package:fluent_books_translator/src/register/VerifyOTP.dart';
 import 'package:flutter/material.dart';
 import '../../CustomWidgets/Button.dart';
 import '../../CustomWidgets/EditText.dart';
@@ -59,7 +60,7 @@ class _ContactDetailsState extends State<ContactDetails> {
                     boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                     marginVertical: s40,
                     ontap: (){
-                      Navigator.pushNamed(context, CreatePassword.routeName);
+                      Navigator.pushNamed(context, VerifyOTP.routeName);
                     },
                   ),
                   // Row(

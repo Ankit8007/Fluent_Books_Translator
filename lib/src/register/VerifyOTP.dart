@@ -1,3 +1,4 @@
+import 'package:fluent_books_translator/src/register/CreateAccount.dart';
 import 'package:fluent_books_translator/src/register/UnderReview.dart';
 import 'package:flutter/material.dart';
 
@@ -76,7 +77,7 @@ class _VerifyOTPState extends State<VerifyOTP> {
                             boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                             marginVertical: s40,
                             ontap: (){
-                              Navigator.pushNamed(context, UnderReview.routeName);
+                              Navigator.pushNamed(context, CreateAccount.routeName);
                             },
                           ),
                         ],

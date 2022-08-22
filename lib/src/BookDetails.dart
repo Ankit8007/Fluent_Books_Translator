@@ -5,12 +5,14 @@ import 'package:fluent_books_translator/childWidgets/LanguageCard.dart';
 import 'package:fluent_books_translator/component/appConstants.dart';
 import 'package:fluent_books_translator/component/fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../CustomWidgets/ImageView.dart';
 import '../component/color.dart';
 import '../component/decoration.dart';
 import '../component/img.dart';
 import '../component/size.dart';
+import '../services/Urls.dart';
 
 class BookDetails extends StatefulWidget {
   const BookDetails({Key? key}) : super(key: key);
@@ -21,6 +23,28 @@ class BookDetails extends StatefulWidget {
 }
 
 class _BookDetailsState extends State<BookDetails> {
+
+  _launchUrl()async{
+    print('launch');
+    var uri = Uri.parse(Urls.webUrl);
+    try{
+      if(await canLaunchUrl(uri)){
+        await launch(Urls.webUrl);
+      }else{
+        print('Could launch this url');
+      }
+    }catch(e){
+      if(await canLaunchUrl(uri)){
+        await launchUrl(uri);
+      }else{
+        print('Could launch this url');
+      }
+    }
+
+
+
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,6 +108,7 @@ class _BookDetailsState extends State<BookDetails> {
                   marginVertical: s10,
                   marginHorizontal: s20,
                   boxDeco: boxDecoration(color: white, radius: s10),
+                  ontap: _launchUrl,
                 ),
               )
             ],
