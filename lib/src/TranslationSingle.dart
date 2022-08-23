@@ -8,8 +8,10 @@ import 'package:fluent_books_translator/component/img.dart';
 import 'package:fluent_books_translator/component/size.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../CustomWidgets/ImageView.dart';
+import '../services/Urls.dart';
 
 class TranslationSingle extends StatefulWidget {
   const TranslationSingle({Key? key}) : super(key: key);
@@ -19,6 +21,27 @@ class TranslationSingle extends StatefulWidget {
 }
 
 class _TranslationSingleState extends State<TranslationSingle> {
+
+  openWebPage() async{
+    print('launch');
+    var uri = Uri.parse(Urls.webUrl);
+    try{
+      if(await canLaunchUrl(uri)){
+        await launch(Urls.webUrl);
+      }else{
+        print('Could launch this url');
+      }
+    }catch(e){
+      if(await canLaunchUrl(uri)){
+        await launchUrl(uri);
+      }else{
+        print('Could launch this url');
+      }
+    }
+
+
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,8 +94,7 @@ class _TranslationSingleState extends State<TranslationSingle> {
                       child: Button(label: 'Edit',
                         labelStyle: txt_16_blue,
                         boxDeco: boxDecoration(borderColor: blue, radius: s10),
-                        ontap: (){
-                        },
+                        ontap: openWebPage,
                       ),
                     ),
                     SizedBox(width: s10,),
