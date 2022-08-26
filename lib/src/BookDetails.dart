@@ -87,7 +87,7 @@ class _BookDetailsState extends State<BookDetails> {
                             padding: EdgeInsets.symmetric(horizontal: s15 * 2),
                             shrinkWrap: true,
                               itemBuilder: (context, index) => LanguageCard(
-                                  color: yellowLightGold,
+                                  color: colorList[index],
                                   lang: langList[index].title,
                                   img: langList[index].image,
                                   status: langList[index].status),

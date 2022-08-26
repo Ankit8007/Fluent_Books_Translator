@@ -1,8 +1,11 @@
 import 'package:fluent_books_translator/component/img.dart';
+import 'package:flutter/material.dart';
 
 import '../Models/SideMenuModel.dart';
+import 'color.dart';
 
 const String email = 'Email';
+const String emailAddress = 'Email Address';
 const String password = 'Password';
 const String forgotYourPassword_q = 'Forgot your Password?';
 const String log_in = "Log In";
@@ -34,13 +37,13 @@ const String yourChildLikes = "Your child's likes";
 const String selectTop10Lang = "Select Top 10 languages";
 const String selectLangDesc = 'Free user can choose 4 languages, for subscription you can choose 10 languages';
 const String details = 'Details';
-const String uploadPhotoIcon = 'Upload photo/icon';
+const String uploadPhoto= 'Upload photo';
 const String here = 'Here';
 const String upload = 'Upload';
 const String translatorBlurb = 'Translator blurb';
 const String writeAboutYou = 'Write About you...';
 const String textHere = 'Text here';
-const String paymentInfo = 'Payment info';
+const String paymentInfo = 'E Payment info';
 const String selectYourBank = 'Select your bank';
 const String enterSwiftCode = 'Enter swift code';
 const String enterAccountNumber = 'Enter account number';
@@ -124,10 +127,7 @@ const String english = 'English';
 
 final List<SideMenuModel> langList = [
   SideMenuModel(image: Img.ani1,title: french),
-  SideMenuModel(image: Img.ani2,title: spanish),
-  SideMenuModel(image: Img.ani3,title: chinese),
   SideMenuModel(image: Img.ani4,title: hindi),
-  SideMenuModel(image: Img.ani4,title: japanese),
   SideMenuModel(image: Img.ani5,title: english),
 ];
 
@@ -137,4 +137,11 @@ final List<String> socialIconList = [
   Img.twitter,
   Img.instagram,
   Img.google
+];
+
+
+List<Color> colorList = [
+  pink_magentaRed,
+  yellowLightGold,
+  greenPaleOlive
 ];

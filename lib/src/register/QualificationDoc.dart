@@ -14,6 +14,7 @@ import '../../component/fonts.dart';
 import '../../component/img.dart';
 import '../../component/size.dart';
 import 'ContactDetails.dart';
+import 'SetupInterview.dart';
 
 class QualificationDoc extends StatefulWidget {
   const QualificationDoc({Key? key}) : super(key: key);
@@ -108,7 +109,8 @@ class _QualificationDocState extends State<QualificationDoc> {
                             boxDeco: boxDecoration(color: blue, radius: s10, giveShadow: true),
                             marginVertical: s40,
                             ontap: () {
-                              Navigator.pushNamed(context, SelectTransLangs.routeName);
+                              // Navigator.pushNamed(context, SelectTransLangs.routeName);
+                              Navigator.pushNamed(context, SetupInterview.routeName);
                             },
                           ),
                         ],
