@@ -1,5 +1,6 @@
 import 'package:fluent_books_translator/src/register/PaymentInfo.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../CustomWidgets/Button.dart';
 import '../../CustomWidgets/EditText.dart';
@@ -12,6 +13,7 @@ import '../../component/decoration.dart';
 import '../../component/fonts.dart';
 import '../../component/img.dart';
 import '../../component/size.dart';
+import '../../controller/AuthCtrl.dart';
 
 class AddAddress extends StatefulWidget {
   const AddAddress({Key? key}) : super(key: key);
@@ -21,6 +23,7 @@ class AddAddress extends StatefulWidget {
 }
 
 class _AddAddressState extends State<AddAddress> {
+  final AuthCtrl authX = Get.put(AuthCtrl());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,28 +48,38 @@ class _AddAddressState extends State<AddAddress> {
                       hint: address,
                       boxDeco: editTextDecoration(),
                       marginVertical: s20,
+                      onChange: (String value) =>
+                      authX.regData.addressDetail.address = value,
                     ),
 
                     EditText(
                       hint: city,
                       boxDeco: editTextDecoration() ,
+                      onChange: (String value) =>
+                      authX.regData.addressDetail.city = value,
                     ),
 
                     EditText(
                       hint: state,
                       boxDeco: editTextDecoration() ,
                       marginVertical: s20,
+                      onChange: (String value) =>
+                      authX.regData.addressDetail.state = value,
                     ),
 
                     EditText(
                       hint: zipCode,
                       boxDeco: editTextDecoration() ,
+                        onChange: (String value) =>
+                        authX.regData.addressDetail.zipCode = value
                     ),
 
                     EditText(
                       hint: country,
                       boxDeco: editTextDecoration() ,
                       marginVertical: s20,
+                        onChange: (String value) =>
+                        authX.regData.addressDetail.country = value
                     ),
 
                     Button(

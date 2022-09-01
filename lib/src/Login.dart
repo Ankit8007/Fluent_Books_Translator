@@ -1,7 +1,7 @@
-
 import 'package:fluent_books_translator/src/Fragment.dart';
 import 'package:fluent_books_translator/src/register/CreateAccount.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../CustomWidgets/Button.dart';
 import '../CustomWidgets/EditText.dart';
@@ -14,6 +14,7 @@ import '../component/decoration.dart';
 import '../component/fonts.dart';
 import '../component/img.dart';
 import '../component/size.dart';
+import '../controller/AuthCtrl.dart';
 import 'register/ContactDetails.dart';
 
 class Login extends StatefulWidget {
@@ -25,6 +26,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final AuthCtrl authX = Get.put(AuthCtrl());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,10 +57,12 @@ class _LoginState extends State<Login> {
                     hint: email,
                     boxDeco: editTextDecoration(),
                     marginVertical: s20,
+                    controller: authX.emailLogin,
                   ),
                   EditText(
                     hint: password,
                     boxDeco: editTextDecoration(),
+                    controller: authX.passLogin,
                   ),
                   Align(
                       alignment: Alignment.centerRight,
@@ -67,13 +72,21 @@ class _LoginState extends State<Login> {
                         style: txt_13_white_600_undr,
                       )),
                   Button(
-                    label: log_in,
-                    labelStyle: txt_16_white,
-                    boxDeco: boxDecoration(color: blue, radius: s10,giveShadow: true),
-                    ontap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Fragment(),));
-                    },
-                  ),
+                      label: log_in,
+                      labelStyle: txt_16_white,
+                      boxDeco: boxDecoration(
+                          color: blue, radius: s10, giveShadow: true),
+                      ontap: () {
+                        authX.login((data) {
+                          if (!data) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const Fragment(),
+                                ));
+                          }
+                        });
+                      }),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -88,7 +101,8 @@ class _LoginState extends State<Login> {
                         sign_up,
                         style: txt_13_blue_600_undr,
                         onTap: () {
-                          Navigator.pushNamed(context, ContactDetails.routeName);
+                          Navigator.pushNamed(
+                              context, ContactDetails.routeName);
                         },
                       )
                     ],
@@ -97,7 +111,6 @@ class _LoginState extends State<Login> {
               ),
             ),
             const Spacer(),
-
             const BottomBanner(),
           ],
         ),
@@ -106,6 +119,6 @@ class _LoginState extends State<Login> {
   }
 
   editTextDecoration() {
-    return boxDecoration(color: white, radius: s10,giveShadow: true);
+    return boxDecoration(color: white, radius: s10, giveShadow: true);
   }
 }

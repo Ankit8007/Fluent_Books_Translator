@@ -42,6 +42,7 @@ class EditText extends StatelessWidget {
       this.preChild,
       this.postChild,
       this.preSize,
+      this.onChange,
       this.postSize})
       : super(key: key);
   final int? maxLines;
@@ -81,6 +82,7 @@ class EditText extends StatelessWidget {
   final Widget? postChild;
   final double? preSize;
   final double? postSize;
+  final onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -138,6 +140,7 @@ class EditText extends StatelessWidget {
                     keyboardType: inputType,
                     obscureText: secureText ?? false,
                     controller: controller,
+                    onChanged: onChange,
                   ),
                 ),
                 SizedBox(

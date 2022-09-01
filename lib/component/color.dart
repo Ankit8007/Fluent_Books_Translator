@@ -14,6 +14,7 @@ const Color yellowishOrange = Color(0xFFFDCD79);
 const Color yellowLightGold = Color(0xFFF9E15B);
 
 const Color red = Color(0xFFE53446);
+const Color orange = Colors.orangeAccent;
 
 const Color crystalBlue = Color(0xFF4FC1E8);
 const Color greenishCyan = Color(0xFF82CCB5);

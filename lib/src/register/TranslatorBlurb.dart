@@ -1,5 +1,6 @@
 import 'package:fluent_books_translator/src/register/UploadIcon.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../CustomWidgets/Button.dart';
 import '../../CustomWidgets/EditText.dart';
@@ -12,6 +13,7 @@ import '../../component/decoration.dart';
 import '../../component/fonts.dart';
 import '../../component/img.dart';
 import '../../component/size.dart';
+import '../../controller/AuthCtrl.dart';
 import 'AddAddress.dart';
 
 class TranslatorBlurb extends StatefulWidget {
@@ -23,6 +25,8 @@ class TranslatorBlurb extends StatefulWidget {
 }
 
 class _TranslatorBlurbState extends State<TranslatorBlurb> {
+  final AuthCtrl authX = Get.put(AuthCtrl());
+  final aboutCtrl = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +53,8 @@ class _TranslatorBlurbState extends State<TranslatorBlurb> {
                     maxLines: 5,
                     minLines: 5,
                     inputType: TextInputType.multiline,
+                    controller: aboutCtrl,
+                    onChange: (String value) => authX.regData.about = value,
 
                   ),
 

@@ -1,6 +1,7 @@
 import 'package:fluent_books_translator/component/img.dart';
 import 'package:flutter/material.dart';
 
+import '../Models/InterviewTimeModel.dart';
 import '../Models/SideMenuModel.dart';
 import 'color.dart';
 
@@ -93,6 +94,9 @@ const String submit = 'Submit';
 const String chooseYourMotherTongue = 'Choose Your Mother Tongue';
 const String yourOtherLanguages = 'Your Other Languages';
 
+const String enabled = 'enabled';
+const String disabled = 'disabled';
+
 
 
 final List<SideMenuModel> sideMenuList = [
@@ -126,9 +130,9 @@ const String japanese = 'Japanese';
 const String english = 'English';
 
 final List<SideMenuModel> langList = [
-  SideMenuModel(image: Img.ani1,title: french),
+  SideMenuModel(image: Img.ani1,title: english),
   SideMenuModel(image: Img.ani4,title: hindi),
-  SideMenuModel(image: Img.ani5,title: english),
+  SideMenuModel(image: Img.ani5,title: french),
 ];
 
 
@@ -141,7 +145,18 @@ final List<String> socialIconList = [
 
 
 List<Color> colorList = [
-  pink_magentaRed,
-  yellowLightGold,
-  greenPaleOlive
+  red,
+  orange,
+  yellowLightGold
+];
+
+final List<InterviewTimeModel> interviewTimeList = [
+  InterviewTimeModel(time: '10:00 AM',status: true),
+  InterviewTimeModel(time: '10:30 AM',type: disabled),
+  InterviewTimeModel(time: '11:00 AM'),
+  InterviewTimeModel(time: '11:30 AM',type: disabled),
+  InterviewTimeModel(time: '12:00 PM'),
+  InterviewTimeModel(time: '12:30 AM',type: disabled),
+  InterviewTimeModel(time: '01:00 AM'),
+  InterviewTimeModel(time: '01:30 AM'),
 ];

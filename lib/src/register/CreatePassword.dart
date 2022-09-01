@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../CustomWidgets/Button.dart';
 import '../../CustomWidgets/EditText.dart';
@@ -12,6 +13,7 @@ import '../../component/decoration.dart';
 import '../../component/fonts.dart';
 import '../../component/img.dart';
 import '../../component/size.dart';
+import '../../controller/AuthCtrl.dart';
 import 'AddAddress.dart';
 import 'TranslatorBlurb.dart';
 
@@ -25,6 +27,9 @@ class CreatePassword extends StatefulWidget {
 class _CreatePasswordState extends State<CreatePassword> {
   @override
   Widget build(BuildContext context) {
+    final AuthCtrl authX = Get.put(AuthCtrl());
+    final passCtrl = TextEditingController();
+    final confirmCtrl = TextEditingController();
     return Scaffold(
       backgroundColor: peach,
       body: SafeArea(
@@ -46,12 +51,14 @@ class _CreatePasswordState extends State<CreatePassword> {
                     hint: password,
                     boxDeco: editTextDecoration(),
                     marginVertical: s20,
+                    controller: passCtrl,
                   ),
 
                   EditText(
                     hint: confirmPassword,
                     boxDeco: editTextDecoration() ,
                     marginBottom: s20,
+                    controller: confirmCtrl,
                   ),
 
                   Button(

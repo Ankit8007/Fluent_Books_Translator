@@ -1,6 +1,7 @@
 
 import 'package:fluent_books_translator/src/register/VerifyOTP.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../CustomWidgets/Button.dart';
 import '../../CustomWidgets/EditText.dart';
 import '../../CustomWidgets/ImageView.dart';
@@ -12,6 +13,7 @@ import '../../component/decoration.dart';
 import '../../component/fonts.dart';
 import '../../component/img.dart';
 import '../../component/size.dart';
+import '../../controller/AuthCtrl.dart';
 import 'CreatePassword.dart';
 
 class ContactDetails extends StatefulWidget {
@@ -23,6 +25,9 @@ class ContactDetails extends StatefulWidget {
 }
 
 class _ContactDetailsState extends State<ContactDetails> {
+  final AuthCtrl authX = Get.put(AuthCtrl());
+  final TextEditingController emailCtrl = TextEditingController();
+  final TextEditingController phoneCtrl = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,12 +51,16 @@ class _ContactDetailsState extends State<ContactDetails> {
                     hint: email,
                     boxDeco: editTextDecoration(),
                     marginVertical: s20,
+                    controller: emailCtrl,
+                    onChange: (String value) => authX.regData.email = value,
                   ),
 
                   EditText(
                     hint: phoneNumber,
                     boxDeco: editTextDecoration() ,
                     marginBottom: s20,
+                    controller: phoneCtrl,
+                    onChange: (String value) => authX.regData.phoneNo,
                   ),
 
                   Button(

@@ -1,6 +1,7 @@
 import 'package:fluent_books_translator/CustomWidgets/DropDown.dart';
 import 'package:fluent_books_translator/src/register/YourLanguage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../CustomWidgets/Button.dart';
 import '../../CustomWidgets/EditText.dart';
@@ -13,6 +14,7 @@ import '../../component/decoration.dart';
 import '../../component/fonts.dart';
 import '../../component/img.dart';
 import '../../component/size.dart';
+import '../../controller/AuthCtrl.dart';
 
 class PaymentInfo extends StatefulWidget {
   const PaymentInfo({Key? key}) : super(key: key);
@@ -23,6 +25,7 @@ class PaymentInfo extends StatefulWidget {
 }
 
 class _PaymentInfoState extends State<PaymentInfo> {
+  final AuthCtrl authX = Get.put(AuthCtrl());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,11 +57,13 @@ class _PaymentInfoState extends State<PaymentInfo> {
                             hint: emailAddress,
                             boxDeco: editTextDecoration(),
                             marginVertical: s20,
+                            onChange: (String value) => authX.regData.payEmail = value,
                           ),
 
                           EditText(
                             hint: phoneNumber,
                             boxDeco: editTextDecoration() ,
+                            onChange: (String value) => authX.regData.payPhoneNo = value,
                           ),
 
 
