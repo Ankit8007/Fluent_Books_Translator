@@ -1,4 +1,3 @@
-import 'package:fluent_books_translator/src/ForgotPassword.dart';
 import 'package:fluent_books_translator/src/Fragment.dart';
 import 'package:fluent_books_translator/src/register/CreateAccount.dart';
 import 'package:flutter/material.dart';
@@ -19,16 +18,17 @@ import '../component/size.dart';
 import '../controller/AuthCtrl.dart';
 import 'register/ContactDetails.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
-  static const String routeName = 'Login';
+class ForgotPassword extends StatefulWidget {
+  const ForgotPassword({Key? key}) : super(key: key);
+  static const String routeName = 'ForgotPassword';
 
   @override
-  State<Login> createState() => _LoginState();
+  State<ForgotPassword> createState() => _ForgotPasswordState();
 }
 
-class _LoginState extends State<Login> {
+class _ForgotPasswordState extends State<ForgotPassword> {
   final AuthCtrl authX = Get.put(AuthCtrl());
+  final TextEditingController ctrl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -54,69 +54,36 @@ class _LoginState extends State<Login> {
                         Align(
                             alignment: Alignment.centerLeft,
                             child: TextView(
-                              log_in,
+                              forgotYourPassword_q,
                               style: txt_18_white_600_CM,
-                              marginTop: s40,
+                              marginTop: s40 * 2,
                               marginBottom: s20,
                             )),
                         EditText(
                           hint: email,
                           boxDeco: editTextDecoration(),
                           marginVertical: s20,
-                          controller: authX.emailLogin,
+                          controller: ctrl,
                         ),
-                        EditText(
-                          hint: password,
-                          boxDeco: editTextDecoration(),
-                          controller: authX.passLogin,
-                        ),
-                        Align(
-                            alignment: Alignment.centerRight,
-                            child: TextView(
-                              forgotYourPassword_q,
-                              marginVertical: s40,
-                              style: txt_13_white_600_undr,
-                              onTap: ()=> Navigator.pushNamed(context, ForgotPassword.routeName)
-                            )),
                         Button(
-                            label: log_in,
+                            label: submit,
                             labelStyle: txt_16_white,
                             boxDeco: boxDecoration(
                                 color: blue, radius: s10, giveShadow: true),
                             ontap: () {
-                              authX.login((status,msg,error) {
+                              authX.forgotPassword(ctrl.text,(status,msg,error) {
                                 if(status){
                                   Fluttertoast.showToast(msg: msg);
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => const Fragment(),
-                                      ));
+                                  // Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(
+                                  //       builder: (context) => const Fragment(),
+                                  //     ));
                                 }else{
                                   Fluttertoast.showToast(msg: error);
                                 }
                               });
                             }),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            TextView(
-                              dontHaveAnAccount_q,
-                              marginRight: s3,
-                              marginTop: s40,
-                              style: txt_13_white,
-                            ),
-                            TextView(
-                              sign_up,
-                              style: txt_13_blue_600_undr,
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, ContactDetails.routeName);
-                              },
-                            )
-                          ],
-                        ),
                       ],
                     ),
                   ),

@@ -4,29 +4,34 @@ class RegistrationModel {
   String firstName;
   String lastName;
   String password;
+  String rePassword;
   String about;
-  List<String> photos;
+  String photo;
   AddressDetails addressDetail;
   String payEmail;
   String payPhoneNo;
   List<String> docList;
   String meetDate;
   String meetTime;
+  String otp;
 
   RegistrationModel({
     this.email = '',
     this.phoneNo = '',
     this.password = '',
+    this.rePassword = '',
     this.firstName = '',
     this.lastName = '',
     this.about = '',
-    required this.photos,
+    this.photo = '',
     required this.addressDetail,
     this.payEmail = '',
     this.payPhoneNo = '',
     required this.docList,
     this.meetDate = '',
-    this.meetTime = ''});
+    this.meetTime = '',
+    this.otp= '',
+  });
 }
 
 class AddressDetails {
